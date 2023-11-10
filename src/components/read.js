@@ -7,13 +7,17 @@ function Read() {
     const [data, setData] = useState([]);
 
   useEffect(
+    
     ()=>{
-        axios.get('https://jsonblob.com/api/jsonblob/1161593332966481920')
+        //replace with your own url to link to server
+        axios.get('http://localhost:4000/api/books')
         .then(
+            //server responce
             (response)=>{
-                setData(response.data.books)
+                setData(response.data.myBooks)
             }
         )
+        //catches problem
         .catch(
             (error)=>{
                 console.log(error);
